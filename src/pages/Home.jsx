@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <main>
             <Header />
-            <h1>Din Mægler</h1>
+            <h1>Home</h1>
         </main>
     )
 
