@@ -1,11 +1,25 @@
+import { createBrowserRouter, RouterProvider } from "react-router"
+import Home from "./pages/Home";
+import Error from "./pages/Error";
 
-function App() {
+export default function App() {
+
+  const browserRouter = createBrowserRouter(
+    [
+      {
+        path: '/',
+        element: <Home />
+        // loader: loadUserAndPets,
+        // hydrateFallbackElement: <p>Loading User...</p>,
+      },
+      {
+        path: '*',
+        element: <Error />
+      }
+    ]
+  );
 
   return (
-    <>
-      <h1>Din Mægler</h1>
-    </>
+    <RouterProvider router={browserRouter} />
   )
 }
-
-export default App
