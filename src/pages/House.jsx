@@ -1,0 +1,1 @@
+// house details page when clicking on a house in the list on Houses.jsx
