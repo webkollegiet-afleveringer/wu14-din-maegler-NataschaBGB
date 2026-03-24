@@ -1,34 +1,56 @@
+import { Link } from "react-router";
 import { IoIosPaperPlane } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import './Header.sass';
 
+
 export default function Header() {
     
     return (
-        <header className='header'>
-            <div className="container">
-                <section className='header__top'>
+        <section className='header'>
+
+            <header className='header__top'>
+                <div className="container">
                     <div className='header__contact'>
-                        <IoIosPaperPlane /> mail
-                        <FaPhoneAlt /> phone
+                        <div className="mail">
+                            <IoIosPaperPlane className="icon" />
+                            4000@dinmaegler.com
+                        </div>
+                        <div className="phone">
+                            <FaPhoneAlt className="icon" />
+                            +45 7070 4000
+                        </div>
                     </div>
-                    log ind knap
-                </section>
+                    <Link to="/login">Log ind</Link>
+                </div>
+            </header>
+            
+            <header className='header__main'>
                 <nav className='header__nav'>
-                    <a href="/">
-                        <img src="/dinmeagler.png" alt="din-meagler_logo" />
+                    <a href="/" className="logo">
+                        <img src="/dinmaegler_logo.png" alt="dinmaegler_logo" />
                         Din Mægler
                     </a>
                     <ul>
-                        <li><a href="/houses">Boliger til salg</a></li>
-                        <li><a href="/brokers">Mæglere</a></li>
+                        <li>
+                            <Link to="/houses">
+                                Boliger til salg
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/brokers">Mæglere</Link>
+                        </li>
                         {/* favourites only shows if user is logged in */}
-                        <li><a href="/favourites">Mine Favoritter</a></li>
-                        <li><a href="/contact">Kontakt</a></li>
+                        <li>
+                            <Link to="/favourites">Mine Favoritter</Link>
+                        </li>
+                        <li>
+                            <Link to="/contact">Kontakt</Link>
+                        </li>
                     </ul>
                 </nav>
-            </div>
-        </header>   
+            </header>
+        </section>
     )
 
 }
