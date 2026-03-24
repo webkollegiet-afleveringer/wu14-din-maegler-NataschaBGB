@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 import Home from "./pages/Home";
 import Error from "./pages/Error";
+import { homesLoader } from "./loaders/homesLoader";
 
 export default function App() {
 
@@ -14,8 +15,8 @@ export default function App() {
         // load 3 brokers in "Mød vores engagerede medarbejdere" section 
         // on the homepage. 
         // -----
-        // loader: homesLoader,
-        // hydrateFallbackElement: <p>Indlæser Hjem...</p>,
+        loader: homesLoader,
+        hydrateFallbackElement: <p>Indlæser Hjem...</p>,
       },
       // {
       //   path: '/login',
