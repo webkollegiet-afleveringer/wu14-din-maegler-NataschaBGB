@@ -1,3 +1,5 @@
+import { IoIosPaperPlane } from "react-icons/io";
+import { FaPhoneAlt } from "react-icons/fa";
 import './Header.sass';
 
 export default function Header() {
@@ -7,8 +9,8 @@ export default function Header() {
             <div className="container">
                 <section className='header__top'>
                     <div className='header__contact'>
-                        mail
-                        phone
+                        <IoIosPaperPlane /> mail
+                        <FaPhoneAlt /> phone
                     </div>
                     log ind knap
                 </section>
