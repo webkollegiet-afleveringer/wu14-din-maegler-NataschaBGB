@@ -29,7 +29,7 @@ export default function Header() {
                 <nav className='header__nav'>
                     <a href="/" className="logo">
                         <img src="/dinmaegler_logo.png" alt="dinmaegler_logo" />
-                        Din Mægler
+                        <h1>Din Mægler</h1>
                     </a>
                     <ul>
                         <li>
