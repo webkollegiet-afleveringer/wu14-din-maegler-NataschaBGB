@@ -1,0 +1,58 @@
+.hero
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)
+        ), url("../../assets/hero.jpg")
+    background-size: cover
+    background-position: bottom center
+    height: 75vh
+
+    .container
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        height: 100%
+        color: #ffffff
+        // text-align: center
+
+    h2
+        font-size: 3.5rem
+        margin-bottom: 2rem
+
+    h3
+        font-size: 1.4rem
+        color: #2A2C30
+        margin: 0 0 2rem
+
+    p
+        font-size: 1rem
+        color: #333333
+
+    &__search
+        background-color: #ffffff
+        padding: 2rem
+        width: 40%
+
+    &__search-input
+        display: flex
+        align-items: center
+        gap: .5rem
+        margin: .5rem 0 0
+
+        input
+            width: 100%
+            padding: 1rem
+            border-radius: 4px
+            font-size: 1rem
+            border: 1px solid #D3DEE8
+            &::placeholder
+                color: #7B7B7B
+        button
+            height: 100%
+            padding: 1rem 2.5rem
+            background-color: #162A41
+            color: #ffffff
+            border: 1px solid #162A41
+            border-radius: 4px
+            font-size: 1rem
