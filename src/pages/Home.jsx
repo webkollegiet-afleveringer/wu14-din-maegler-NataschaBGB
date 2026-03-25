@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
+import Experience from "../components/Experience/Experience";
 
 export default function Home() {
 
@@ -9,10 +10,15 @@ export default function Home() {
     
   
     return (
-        <main>
+        <section className="home">
+        
             <Header />
-            <Hero />
-        </main>
+        
+            <main>
+                <Hero />
+                <Experience />
+            </main>
+        </section>
     )
 
 }
