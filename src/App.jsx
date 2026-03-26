@@ -4,6 +4,7 @@ import Error from "./pages/Error";
 import { homesLoader } from "./loaders/homesLoader";
 import Houses from "./pages/Houses";
 import House from "./pages/House";
+import { homePageLoader } from "./loaders/homePageLoader";
 
 export default function App() {
 
@@ -17,7 +18,7 @@ export default function App() {
         // load 3 brokers in "Mød vores engagerede medarbejdere" section 
         // on the homepage. 
         // -----
-        loader: homesLoader,
+        loader: homePageLoader,
         hydrateFallbackElement: <p>Indlæser Hjem...</p>,
       },
       // {
