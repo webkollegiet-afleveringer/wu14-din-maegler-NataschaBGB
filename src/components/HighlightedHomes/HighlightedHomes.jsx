@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import './HighlightedHomes.sass';
-import Home from '../Home/Home';
+import HouseCard from '../HouseCard/HouseCard';
 
 
 export default function HighlightedHomes({ homes, limit }) {
@@ -21,13 +21,14 @@ export default function HighlightedHomes({ homes, limit }) {
                 <p>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
 
                 <section className='highlighted-homes__homes'>
-                    {/* get 4 highlighted homes data from api and loop through them */}
+                    {/* loop through list variable which gets its limit from limit={} where HighlightedHomes component is used */}
                     {list.map((home) => (
-                        <Home key={home.id} home={home} />
+                        // set home from HouseCard to home from the map function
+                        <HouseCard key={home.id} home={home} />
                     ))}
                 </section>
 
-                <Link to="/homes">Se alle boliger</Link>
+                <Link to="/houses" className='highlighted-homes__button'>Se alle boliger</Link>
             
             </div>
             
