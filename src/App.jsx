@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from "react-router"
 import Home from "./pages/Home";
 import Error from "./pages/Error";
 import { homesLoader } from "./loaders/homesLoader";
+import Houses from "./pages/Houses";
+import House from "./pages/House";
 
 export default function App() {
 
@@ -43,18 +45,18 @@ export default function App() {
       //   path: '/register',
       //   element: <Register />
       // },
-      // {
-      //   path: '/houses',
-      //   element: <Houses />,
+      {
+        path: '/houses',
+        element: <Houses />,
       //   loader: homesLoader,
       //   hydrateFallbackElement: <p>Indlæser alle hjem...</p>,
-      // },
-      // {
-      //   path: '/house/:houseId',
-      //   element: <House />,
+      },
+      {
+        path: '/houses/:houseId',
+        element: <House />,
         // loader: houseLoader,
         // hydrateFallbackElement: <p>Indlæser hjem...</p>,
-      // },
+      },
       // {
       //   path: '/brokers',
       //   element: <Brokers />,
