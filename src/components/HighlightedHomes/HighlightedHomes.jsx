@@ -1,28 +1,21 @@
 import { Link } from 'react-router';
-import './HighlightedHomes.sass';
 import HouseCard from '../HouseCard/HouseCard';
+import './HighlightedHomes.sass';
 
 
-export default function HighlightedHomes({ homes, limit }) {
-
-    // if limit value is provided, slice the homes array to get only the provided number of homes, otherwise return the full array
-    // homes.homes =>
-    // the first homes is the name of the variable passed from the loader - which is an object containing the array of homes
-    // the second homes is the name of the array inside the object returned by the loader
-    const list = limit ? homes.homes.slice(0, limit) : homes.homes;
-    
+export default function HighlightedHomes({ homes }) {
 
     return (
         <section className='highlighted-homes'>
             
             <div className="container">
 
-                <h2>Udvalgte boliger</h2>
-                <p>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
+                <h2 className='highlighted-homes__title'>Udvalgte boliger</h2>
+                <p className='highlighted-homes__subtitle'>There are many variations of passages of Lorem Ipsum available but the this in majority have suffered alteration in some</p>
 
                 <section className='highlighted-homes__homes'>
-                    {/* loop through list variable which gets its limit from limit={} where HighlightedHomes component is used */}
-                    {list.map((home) => (
+                    {/* loop through homes variable which gets its data from the parent component */}
+                    {homes.map(home => (
                         // set home from HouseCard to home from the map function
                         <HouseCard key={home.id} home={home} />
                     ))}

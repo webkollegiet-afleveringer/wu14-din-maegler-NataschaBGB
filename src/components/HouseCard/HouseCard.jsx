@@ -5,7 +5,7 @@ import './HouseCard.sass';
 export default function HouseCard({ home }) {
     
     return (
-        <Link to={`/houses/${home.id}`} className='home' key={home.id} >
+        <Link to={`/houses/${home.id}`} className='home'>
             {home.images?.[0]?.formats?.thumbnail?.url ? (
                 <img src={home.images[0].formats.thumbnail.url} alt={home.title} />
             ) : (
