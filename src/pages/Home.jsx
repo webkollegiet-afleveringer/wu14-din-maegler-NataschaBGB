@@ -5,6 +5,7 @@ import Experience from "../components/Experience/Experience";
 import HighlightedHomes from "../components/HighlightedHomes/HighlightedHomes";
 import Newsletter from "../components/Newsletter/Newsletter";
 import Employees from "../components/Employees/Employees";
+import OurApp from "../components/OurApp/OurApp";
 
 
 export default function Home() {
@@ -31,6 +32,8 @@ export default function Home() {
                 <Newsletter />
 
                 <Employees brokers={brokers} />
+
+                <OurApp />
 
             </main>
         </section>
