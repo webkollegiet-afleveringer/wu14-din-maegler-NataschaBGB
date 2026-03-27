@@ -1,3 +1,5 @@
+@use "../../style/variables.sass" as var;
+    
 .hero
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.4), 
@@ -13,8 +15,7 @@
         justify-content: center
         align-items: center
         height: 100%
-        color: #ffffff
-        // text-align: center
+        color: #FFFFFF
 
     h2
         font-size: 3.5rem
@@ -22,15 +23,15 @@
 
     h3
         font-size: 1.4rem
-        color: #2A2C30
+        color: var.$secondary-title-color
         margin: 0 0 2rem
 
     p
         font-size: 1rem
-        color: #333333
+        color: var.$primary-text-color
 
     &__search
-        background-color: #ffffff
+        background-color: #FFFFFF
         padding: 2rem
         width: 40%
 
@@ -47,12 +48,12 @@
             font-size: 1rem
             border: 1px solid #D3DEE8
             &::placeholder
-                color: #7B7B7B
+                color: var.$secondary-text-color
         button
             height: 100%
             padding: 1rem 2.5rem
-            background-color: #162A41
-            color: #ffffff
-            border: 1px solid #162A41
+            background-color: var.$tertiary-bg-color
+            color: #FFFFFF
+            border: 1px solid var.$tertiary-bg-color
             border-radius: 4px
             font-size: 1rem

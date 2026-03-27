@@ -49,8 +49,8 @@ export default function App() {
       {
         path: '/houses',
         element: <Houses />,
-      //   loader: homesLoader,
-      //   hydrateFallbackElement: <p>Indlæser alle hjem...</p>,
+        loader: homesLoader,
+        hydrateFallbackElement: <p>Indlæser alle hjem...</p>
       },
       {
         path: '/houses/:houseId',

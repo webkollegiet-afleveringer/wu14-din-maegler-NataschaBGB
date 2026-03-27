@@ -12,8 +12,8 @@ import Footer from "../components/Footer/Footer";
 export default function Home() {
 
     const { homes, brokers } = useLoaderData();
-    console.log(homes);
-    console.log(brokers);
+    // console.log(homes);
+    // console.log(brokers);
 
 
     return (

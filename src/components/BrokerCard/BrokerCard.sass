@@ -1,9 +1,11 @@
+@use "../../style/variables.sass" as var;
+    
 .broker
-    background-color: #ffffff
-    color: #333333
+    background-color: var.$primary-bg-color
+    color: var.$primary-text-color
     text-decoration: none
     border-radius: 4px
-    box-shadow: 0px 0px 16px 2px #D3DEE8
+    box-shadow: var.$box-shadow
     position: relative
     z-index: 6
 
@@ -24,12 +26,12 @@
         text-decoration: none
         font-size: 1.5rem
         text-align: center
-        color: #2A2C30
+        color: var.$secondary-title-color
     
     &__title
         font-size: 1.3rem
         text-align: center
-        color: #7B7B7B
+        color: var.$secondary-text-color
 
     
     &__contact
@@ -40,7 +42,7 @@
         position: relative
 
     &__email, &__phone
-        color: #162A41
+        color: var.$primary-icon-color
         text-decoration: none
         height: 30px
         width: 30px
@@ -50,9 +52,9 @@
         span
             position: absolute
             display: block
-            background-color: #162A41
+            background-color: var.$secondary-icon-bg-color
             width: fit-content
-            color: #ffffff
+            color: var.$secondary-icon-color
             padding: 0.5rem 1rem
             border-radius: 4px
             font-size: 0.9rem
