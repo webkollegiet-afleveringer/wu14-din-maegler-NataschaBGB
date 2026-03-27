@@ -1,0 +1,61 @@
+@use "../../style/variables.sass" as var;
+    
+.header
+
+    &__top
+        padding: 1rem 0
+        background-color: var.$tertiary-bg-color
+        color: #FFFFFF
+
+        a
+            color: #FFFFFF
+            text-decoration: none
+
+        .container
+            display: flex
+            justify-content: space-between
+            align-items: center
+            max-width: 1200px
+            margin: 0 auto
+
+    &__contact
+        display: flex
+        gap: 2rem
+        .mail, .phone
+            display: flex
+            align-items: center
+            gap: 0.5rem
+            .icon
+                font-size: 1.5rem
+
+    &__main
+        padding: 1rem 0
+        background-color: #FFFFFF
+
+    &__nav
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 2rem
+        max-width: 1200px
+        margin: 0 auto
+
+        .logo
+            display: flex
+            align-items: baseline
+            gap: 0.5rem
+            color: var.$primary-icon-color
+            text-decoration: none
+            font-size: 1rem
+            font-weight: 600
+            text-transform: uppercase
+        
+        ul
+            display: flex
+            gap: 1.5rem
+            list-style: none
+            li
+                a
+                    color: var.$primary-text-color
+                    text-decoration: none
+                    font-size: 1rem

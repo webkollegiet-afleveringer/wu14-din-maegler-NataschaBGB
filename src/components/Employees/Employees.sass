@@ -1,0 +1,39 @@
+@use "../../style/variables.sass" as var;
+    
+.employees
+    background-color: var.$secondary-bg-color
+    padding: 8rem 0 6rem
+
+    .container
+        max-width: 1200px
+        margin: 0 auto
+
+    &__title
+        font-size: 2.5rem
+        margin-bottom: 2rem
+        color: var.$primary-title-color
+        text-align: center
+    
+    &__subtitle
+        width: 60%
+        margin: 0 auto 1.5rem
+        font-size: 1.2rem
+        line-height: 1.4
+        color: var.$primary-text-color
+        text-align: center
+
+    &__brokers
+        margin: 4rem 0
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        gap: 2rem
+
+    &__button
+        display: block
+        margin: 0 auto
+        width: fit-content
+        background-color: var.$tertiary-bg-color
+        color: #FFFFFF
+        padding: 1rem 2.5rem
+        text-decoration: none
+        font-size: 1.2rem

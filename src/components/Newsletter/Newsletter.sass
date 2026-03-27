@@ -1,0 +1,46 @@
+@use "../../style/variables.sass" as var;
+    
+.newsletter
+    background-image: linear-gradient(
+        rgba(37, 47, 58, 0.8), 
+        rgba(37, 47, 58, 0.8)
+        ), url("../../assets/newsletter.png")
+    background-size: cover
+    background-position: center
+    padding: 6rem 0
+
+    .container
+        max-width: 1200px
+        margin: 0 auto
+        display: grid
+        grid-template-columns: 1fr 1fr
+        align-items: center
+        gap: 4rem
+
+    h2
+        font-size: 2rem
+        color: #FFFFFF
+
+    &__form
+        width: 100%
+        position: relative
+
+        input
+            width: 100%
+            padding: 2rem 1rem
+            border-radius: 4px
+            font-size: 1.2rem
+            border: none
+            &::placeholder
+                color: var.$secondary-text-color
+        button
+            position: absolute
+            right: 0
+            height: 100%
+            padding: 1.5rem 2rem
+            background-color: #FFFFFF
+            color: #000000
+            border: none
+            border-radius: 4px
+            font-size: 2rem
+            cursor: pointer
