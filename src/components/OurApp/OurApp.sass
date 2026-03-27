@@ -1,0 +1,69 @@
+.our-app
+    background-color: #162A41
+    color: #ffffff
+    padding: 6rem 0 0
+
+    .container
+        max-width: 1200px
+        margin: 0 auto
+        display: grid
+        grid-template-columns: 1fr auto
+        column-gap: 4rem
+
+    &__content
+        grid-column: 1 / 2
+        grid-row: 1 / 2
+        padding: 2rem 0 6rem
+
+    &__title
+        font-size: 2.5rem
+        line-height: 1.5
+        width: 70%
+        margin-bottom: 2rem
+
+    &__subtitle
+        font-size: 1.1rem
+        line-height: 1.6
+        margin-bottom: 2rem
+
+    &__buttons
+        display: flex
+        gap: 1rem
+        font-weight: 600
+    &__google-button, &__apple-button
+        display: flex
+        justify-content: center
+        align-items: center
+        text-decoration: none
+        padding: 1rem 2rem
+        font-size: 1.1rem
+        .icon
+            margin-right: 0.5rem
+            font-size: 1.6rem
+    &__google-button
+        background-color: #ffffff
+        color: #162A41
+    &__apple-button
+        background-color: transparent
+        color: #ffffff
+        border: 1px solid #ffffff
+
+    &__images
+        grid-column: 2 / 3
+        grid-row: 1 / 4
+        position: relative
+        height: 100%
+        width: 450px
+    &__image-left
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 1
+        height: 100%
+        width: 60%
+    &__image-right
+        position: absolute
+        top: 0
+        right: 0
+        height: 100%
+        width: 60%
