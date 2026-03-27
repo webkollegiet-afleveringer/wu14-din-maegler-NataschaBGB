@@ -1,9 +1,11 @@
+@use "../../style/variables.sass" as var;
+    
 .home
-    background-color: #ffffff
-    color: #333333
+    background-color: #FFFFFF
+    color: var.$primary-text-color
     text-decoration: none
     border-radius: 4px
-    box-shadow: 0px 0px 16px 2px #D3DEE8
+    box-shadow: var.$box-shadow
 
     img
         width: 100%
@@ -19,6 +21,7 @@
         align-items: center
         gap: 0.5rem
         font-size: 1.4rem
+        color: var.$secondary-title-color
 
     &__type
         font-size: 1.1rem
@@ -41,7 +44,7 @@
         
         h3
             font-size: 1.2rem
-            color: #2A2C30
+            color: var.$secondary-title-color
         
         .details-energylabel
             display: flex
@@ -50,7 +53,7 @@
             height: 35px
             font-size: 1.4rem
             aspect-ratio: 1
-            color: #ffffff
+            color: #FFFFFF
         .a-label
             background-color: green
         .b-label

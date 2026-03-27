@@ -1,5 +1,7 @@
+@use "../../style/variables.sass" as var;
+    
 .highlighted-homes
-    background-color: #F8F8FB
+    background-color: var.$secondary-bg-color
     padding: 8rem 0 6rem
 
     .container
@@ -9,7 +11,7 @@
     &__title
         font-size: 2.5rem
         margin-bottom: 2rem
-        color: #263048
+        color: var.$primary-title-color
         text-align: center
     
     &__subtitle
@@ -17,7 +19,7 @@
         margin: 0 auto 1.5rem
         font-size: 1.2rem
         line-height: 1.4
-        color: #333333
+        color: var.$primary-text-color
         text-align: center
 
     &__homes
@@ -30,8 +32,8 @@
         display: block
         margin: 0 auto
         width: fit-content
-        background-color: #162A41
-        color: #ffffff
+        background-color: var.$tertiary-bg-color
+        color: #FFFFFF
         padding: 1rem 2.5rem
         text-decoration: none
         font-size: 1.2rem

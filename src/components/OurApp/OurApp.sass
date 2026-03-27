@@ -1,6 +1,8 @@
+@use "../../style/variables.sass" as var;
+    
 .our-app
-    background-color: #162A41
-    color: #ffffff
+    background-color: var.$tertiary-bg-color
+    color: #FFFFFF
     padding: 6rem 0 0
 
     .container
@@ -41,12 +43,12 @@
             margin-right: 0.5rem
             font-size: 1.6rem
     &__google-button
-        background-color: #ffffff
-        color: #162A41
+        background-color: #FFFFFF
+        color: var.$primary-icon-color
     &__apple-button
         background-color: transparent
-        color: #ffffff
-        border: 1px solid #ffffff
+        color: #FFFFFF
+        border: 1px solid #FFFFFF
 
     &__images
         grid-column: 2 / 3

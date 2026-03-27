@@ -1,12 +1,14 @@
+@use "../../style/variables.sass" as var;
+    
 .header
 
     &__top
         padding: 1rem 0
-        background-color: #162A41
-        color: #ffffff
+        background-color: var.$tertiary-bg-color
+        color: #FFFFFF
 
         a
-            color: #ffffff
+            color: #FFFFFF
             text-decoration: none
 
         .container
@@ -28,7 +30,7 @@
 
     &__main
         padding: 1rem 0
-        background-color: #ffffff
+        background-color: #FFFFFF
 
     &__nav
         display: flex
@@ -42,7 +44,7 @@
             display: flex
             align-items: baseline
             gap: 0.5rem
-            color: #162A41
+            color: var.$primary-icon-color
             text-decoration: none
             font-size: 1rem
             font-weight: 600
@@ -54,6 +56,6 @@
             list-style: none
             li
                 a
-                    color: #333333
+                    color: var.$primary-text-color
                     text-decoration: none
                     font-size: 1rem

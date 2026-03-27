@@ -1,3 +1,5 @@
+@use "../../style/variables.sass" as var;
+    
 .experience
     max-width: 1200px
     margin: 8rem auto 4rem
@@ -14,16 +16,16 @@
         h2
             font-size: 2.5rem
             margin-bottom: 2rem
-            color: #263048
+            color: var.$primary-title-color
         h3
             font-size: 1.5rem
             margin-bottom: 1rem
-            color: #162A41
+            color: var.$tertiary-title-color
         p
             font-size: 1.2rem
             line-height: 1.4
             margin-bottom: 1.5rem
-            color: #333333
+            color: var.$primary-text-color
         
     &__homes
         display: flex
@@ -40,20 +42,20 @@
             grid-column: 1 / 2
             grid-row: 1 / 3
             font-size: 4.5rem
-            background-color: #EEF7FF
-            color: #162A41
+            background-color: var.$primary-icon-bg-color
+            color: var.$primary-icon-color
             padding: 10px
         
         h4
             grid-column: 2 / 3
             grid-row: 1 / 2
             font-size: 1.5rem
-            color: #2A2C30
+            color: var.$secondary-title-color
         p
             grid-column: 2 / 3
             grid-row: 2 / 3
             font-size: 1.2rem
-            color: #333333
+            color: var.$primary-text-color
             margin: 0
 
     hr
@@ -75,18 +77,18 @@
             grid-column: 1 / 2
             grid-row: 1 / 2
             font-size: 3.5rem
-            background-color: #EEF7FF
-            color: #162A41
+            background-color: var.$primary-icon-bg-color
+            color: var.$primary-icon-color
             padding: 8px
 
         h3
             grid-column: 2 / 3
             grid-row: 1 / 2
             font-size: 1.5rem
-            color: #2A2C30
+            color: var.$secondary-title-color
         p
             grid-column: 2 / 3
             grid-row: 2 / 3
             font-size: 1.2rem
             line-height: 1.4
-            color: #333333
+            color: var.$primary-text-color
