@@ -3,9 +3,41 @@
 .home
     background-color: #FFFFFF
     color: var.$primary-text-color
-    text-decoration: none
     border-radius: 4px
     box-shadow: var.$box-shadow
+    position: relative
+
+    &__bookmark-button
+        position: absolute
+        top: 1rem
+        right: 1rem
+        width: 35px
+        height: 35px
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 50%
+        border: none
+        transition: background-color 0.3s ease, color 0.3s ease
+        cursor: pointer
+        background-color: var.$secondary-icon-color
+        .heart
+            stroke: var.$primary-icon-color
+            stroke-width: 50px
+            font-size: 1.5rem
+            
+    &__bookmark-button--not-added
+        .heart
+            fill: var.$secondary-icon-color
+
+    &__bookmark-button--not-added:hover
+        // background-color: grey
+        // opacity: .8
+
+    &__bookmark-button--added
+        .heart
+            fill: var.$secondary-icon-bg-color
+            
 
     img
         width: 100%
@@ -17,6 +49,7 @@
         padding: 1.5rem
 
     &__header
+        text-decoration: none
         display: flex
         align-items: center
         gap: 0.5rem
