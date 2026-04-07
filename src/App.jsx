@@ -1,10 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
+import { homePageLoader } from "./loaders/homePageLoader";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
 import { homesLoader } from "./loaders/homesLoader";
 import Houses from "./pages/Houses";
 import House from "./pages/House";
-import { homePageLoader } from "./loaders/homePageLoader";
+import { brokersLoader } from "./loaders/brokersLoader";
+import Brokers from "./pages/Brokers";
+import Broker from "./pages/Broker";
+
 
 export default function App() {
 
@@ -58,18 +62,18 @@ export default function App() {
         // loader: houseLoader,
         // hydrateFallbackElement: <p>Indlæser hjem...</p>,
       },
-      // {
-      //   path: '/brokers',
-      //   element: <Brokers />,
-      //   loader: brokersLoader,
-      //   hydrateFallbackElement: <p>Indlæser mæglere...</p>,
-      // },
-      // {
-        // path: '/broker/:brokerId',
-        // element: <Broker />,
+      {
+        path: '/brokers',
+        element: <Brokers />,
+        loader: brokersLoader,
+        hydrateFallbackElement: <p>Indlæser mæglere...</p>,
+      },
+      {
+        path: '/brokers/:brokerId',
+        element: <Broker />,
         // loader: brokerLoader,
         // hydrateFallbackElement: <p>Indlæser mægler...</p>,
-      // },
+      },
       {
         path: '*',
         element: <Error />
