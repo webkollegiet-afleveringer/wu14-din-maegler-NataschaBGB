@@ -1,11 +1,22 @@
 import { Link } from 'react-router';
 import './HouseCard.sass';
+import { IoMdHeart } from "react-icons/io";
+import { useBookmarks } from '../../hooks/useBookmarks';
 
 
-export default function HouseCard({ home }) {
-    
+export default function HouseCard({ home, showFavorite }) {
+
+    // get addBookmark and isBookmarked from useBookmarks hook
+    const { addBookmark, isBookmarked } = useBookmarks();
+
+
     return (
-        <Link to={`/houses/${home.id}`} className='home'>
+        <section className='home'>
+            
+            <button className={`home__bookmark-button ${isBookmarked(home.id) ? "home__bookmark-button--added" : "home__bookmark-button--not-added"}`} onClick={() => addBookmark(home.id, home.adress1, home.description)} disabled={isBookmarked(home.id)} style={{ display: showFavorite ? 'flex' : 'none' }}>
+                <IoMdHeart className='heart' />
+            </button>
+
             {home.images?.[0]?.formats?.thumbnail?.url ? (
                 <img src={home.images[0].formats.thumbnail.url} alt={home.title} />
             ) : (
@@ -13,7 +24,7 @@ export default function HouseCard({ home }) {
             )}
             
             <div className='home__info'>
-                <div className='home__header'>
+                <Link to={`/houses/${home.id}`} className='home__header'>
                     {home.adress1? (
                         <h3>{home.adress1} </h3>
                     ) : null}
@@ -21,11 +32,12 @@ export default function HouseCard({ home }) {
                         
                         <h3><span>•</span> {home.adress2}</h3>
                     ) : null}
-                </div>
+                </Link>
                 
                 {home.postalcode && home.city ? (
                     <p className='home__city'>{home.postalcode} {home.city}</p>
                 ) : null}
+                
                 {/* cost = ejerudgifter */}
                 {/* gross = brutto */}
                 {/* netto = netto */}
@@ -50,12 +62,12 @@ export default function HouseCard({ home }) {
                     ) : null}
 
                     {home.price ? (
-                        <p className='details-price'>Kr. {home.price}</p>
+                        <p className='details-price'>Kr. {home.price.toLocaleString('da-DK')}</p>
                     ) : null}
 
                 </div>
             </div>
-        </Link>
+        </section>
     )
 
 }
