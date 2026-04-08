@@ -6,3 +6,8 @@
 
 Brokers page:
 - Changed linkedin link in BrokerCard to phone link, because the API does not provide a link for a linkedin profile
+
+
+Login form:
+- Borrowed code from this youtube video:
+https://www.youtube.com/watch?v=VJ1OWCQJhLk

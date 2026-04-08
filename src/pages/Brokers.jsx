@@ -16,7 +16,7 @@ export default function Brokers() {
             <Header />
             <main>
 
-                <Subhero title="Medarbejdere i Roskilde" height="200px" />
+                <Subhero height="200px" title="Medarbejdere i Roskilde" titleSize="3.8rem" subtitle={false} />
 
                 <BrokersAgents brokers={brokers} />
 

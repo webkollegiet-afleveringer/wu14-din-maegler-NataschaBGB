@@ -1,13 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router"
 import { homePageLoader } from "./loaders/homePageLoader";
 import Home from "./pages/Home";
-import Error from "./pages/Error";
+import Login from "./pages/Login";
 import { homesLoader } from "./loaders/homesLoader";
 import Houses from "./pages/Houses";
 import House from "./pages/House";
 import { brokersLoader } from "./loaders/brokersLoader";
 import Brokers from "./pages/Brokers";
 import Broker from "./pages/Broker";
+import Error from "./pages/Error";
 
 
 export default function App() {
@@ -25,9 +26,9 @@ export default function App() {
         loader: homePageLoader,
         hydrateFallbackElement: <p>Indlæser Hjem...</p>,
       },
-      // {
-      //   path: '/login',
-      //   element: <Login />,
+      {
+        path: '/login',
+        element: <Login />,
         // -----
         // login form with email and password fields, and a submit button. 
         // on submit, validate the input and show error messages if necessary.
@@ -45,7 +46,7 @@ export default function App() {
         // -----
         // loader: homesLoader,
         // hydrateFallbackElement: <p>Indlæser alle hjem...</p>,
-      // },
+      },
       // {
       //   path: '/register',
       //   element: <Register />

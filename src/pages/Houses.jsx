@@ -24,7 +24,7 @@ export default function Houses() {
             <main>
                 {/* components here */}
 
-                <Subhero title="Boliger til salg" height="200px" />
+                <Subhero height="200px" title="Boliger til salg" titleSize="3.8rem" subtitle={false} />
                 
                 <HousesSort 
                     homes={homes} 

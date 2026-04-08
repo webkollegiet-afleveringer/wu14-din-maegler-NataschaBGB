@@ -1,0 +1,74 @@
+@use '../../style/variables' as var;
+    
+.login-form
+    display: flex
+    flex-direction: column
+    gap: 3rem
+    width: 40%
+    margin: 6rem auto
+    padding: 4rem 10rem
+    border: 1px solid var.$border-color
+    border-radius: 4px
+
+    h1
+        color: var.$secondary-title-color
+        font-size: 2rem
+        text-align: center
+
+    button
+        font-size: 1.2rem
+        padding: 1rem
+        color: var.$secondary-icon-color
+        border: none
+        cursor: pointer
+        width: 100%
+
+    &__form
+        display: flex
+        flex-direction: column
+        gap: 2rem
+
+    &__error
+        color: red
+        background-color: var.$primary-icon-bg-color
+        padding: 1rem
+        border-radius: 4px
+
+    &__label
+        display: block
+        margin: 0 0 .5rem
+        color: var.$primary-text-color
+        font-size: 1rem
+
+    input
+        width: 100%
+        font-size: 1rem
+        padding: 1rem .75rem
+        border: 1px solid var.$border-color
+        &::placeholder
+            color: var.$secondary-text-color
+    
+    &__button
+        background-color: var.$tertiary-bg-color
+
+    &__social-buttons
+        display: flex
+        gap: 1rem
+        width: 100%
+    &__social-button-google
+        background-color: #DD4B39
+    &__social-button-facebook
+        background-color: #3B5999
+    &__social-button-twitter
+        background-color: #162A41
+
+    &__register
+        display: block
+        text-align: center
+        color: var.$primary-text-color
+        font-size: 1rem
+        a
+            color: #2F80ED
+            text-decoration: none
+            &:hover
+                text-decoration: underline
