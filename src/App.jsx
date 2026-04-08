@@ -9,6 +9,7 @@ import { brokersLoader } from "./loaders/brokersLoader";
 import Brokers from "./pages/Brokers";
 import Broker from "./pages/Broker";
 import Error from "./pages/Error";
+import Register from "./pages/Register";
 
 
 export default function App() {
@@ -47,10 +48,10 @@ export default function App() {
         // loader: homesLoader,
         // hydrateFallbackElement: <p>Indlæser alle hjem...</p>,
       },
-      // {
-      //   path: '/register',
-      //   element: <Register />
-      // },
+      {
+        path: '/register',
+        element: <Register />
+      },
       {
         path: '/houses',
         element: <Houses />,
