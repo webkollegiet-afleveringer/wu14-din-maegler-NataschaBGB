@@ -1,4 +1,6 @@
-// house details page when clicking on a house in the list on Houses.jsx
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+
 
 export default function House() {
 
@@ -20,7 +22,17 @@ export default function House() {
 
     return (
         <section className="house-page">
-            <h1>House details page</h1>
+
+            <Header />
+            
+            <main>
+                
+                <h1>House Details</h1>
+
+            </main>
+
+            <Footer />
+
         </section>
     )
 

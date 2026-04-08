@@ -17,10 +17,3 @@ export async function homesLoader() {
         throw error; // Rethrow the error to be handled by the caller
     }
 }
-
-
-// get homes by type:
-// https://dinmaegler.onrender.com/homes?type_eq=Ejerlejlighed
-
-// get homes in price range:
-// https://dinmaegler.onrender.com/homes?price_gte=4000000&price_lte=6000000
