@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { IoIosPaperPlane } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
+import { FaUser } from "react-icons/fa6";
 import './Header.sass';
 
 
@@ -21,7 +22,10 @@ export default function Header() {
                             +45 7070 4000
                         </div>
                     </div>
-                    <Link to="/login">Log ind</Link>
+                    <Link to="/login" className="login">
+                        <FaUser className="icon" />
+                        Log ind
+                    </Link>
                 </div>
             </header>
             
