@@ -81,7 +81,10 @@ export default function App() {
         path: '*',
         element: <Error />
       }
-    ]
+    ],
+    {
+      basename: "/wu14-din-maegler-NataschaBGB/"
+    }
   );
 
   return (
