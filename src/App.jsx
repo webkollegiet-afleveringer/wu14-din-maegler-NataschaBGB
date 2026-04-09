@@ -7,6 +7,7 @@ import Houses from "./pages/Houses";
 import House from "./pages/House";
 import { brokersLoader } from "./loaders/brokersLoader";
 import Brokers from "./pages/Brokers";
+import { brokerLoader } from "./loaders/brokerLoader";
 import Broker from "./pages/Broker";
 import Error from "./pages/Error";
 import Register from "./pages/Register";
@@ -73,8 +74,8 @@ export default function App() {
       {
         path: '/brokers/:brokerId',
         element: <Broker />,
-        // loader: brokerLoader,
-        // hydrateFallbackElement: <p>Indlæser mægler...</p>,
+        loader: brokerLoader,
+        hydrateFallbackElement: <p>Indlæser mægler...</p>,
       },
       {
         path: '*',
