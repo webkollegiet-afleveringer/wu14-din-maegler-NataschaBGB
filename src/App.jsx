@@ -18,7 +18,7 @@ export default function App() {
   const browserRouter = createBrowserRouter(
     [
       {
-        path: '/wu14-din-maegler-NataschaBGB/',
+        path: '/',
         element: <Home />,
         // ----- 
         // load 4 homes in "Udvalgte Boliger" section 
