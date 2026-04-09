@@ -1,6 +1,7 @@
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoIosPaperPlane } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
+import logo from "../../assets/dinmaegler_logo.png";
 import './Footer.sass';
 
 
@@ -13,7 +14,7 @@ export default function Footer() {
                 <div className='container'>
                     
                     <a href="/wu14-din-maegler-NataschaBGB/" className="footer__main-logo">
-                        <img src="./dinmaegler_logo.png" alt="dinmaegler_logo" />
+                        <img src={logo} alt="dinmaegler_logo" />
                         <h1>Din Mægler</h1>
                     </a>
                     

@@ -8,7 +8,7 @@ import BrokersAgents from "../components/Brokers/Brokers";
 export default function Brokers() {
 
     const brokers = useLoaderData();
-    console.log(brokers);
+    // console.log(brokers);
 
     return (
         <section className="brokers-page">

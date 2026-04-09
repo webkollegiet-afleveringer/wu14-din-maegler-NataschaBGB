@@ -11,7 +11,6 @@ export default function Broker() {
     const { broker } = useLoaderData();
     console.log(broker);
     
-    
 
     return (
         <section className="broker-page">

@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { IoIosPaperPlane } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
+import logo from "../../assets/dinmaegler_logo.png";
 import './Header.sass';
 
 
@@ -32,7 +33,7 @@ export default function Header() {
             <header className='header__main'>
                 <nav className='header__nav'>
                     <a href="/wu14-din-maegler-NataschaBGB/" className="logo">
-                        <img src="./dinmaegler_logo.png" alt="dinmaegler_logo" />
+                        <img src={logo} alt="dinmaegler_logo" />
                         <h1>Din Mægler</h1>
                     </a>
                     <ul>
