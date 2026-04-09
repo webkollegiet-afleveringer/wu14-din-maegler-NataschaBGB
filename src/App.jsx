@@ -82,9 +82,9 @@ export default function App() {
         element: <Error />
       }
     ],
-    {
-      basename: "/wu14-din-maegler-NataschaBGB/"
-    }
+    // {
+    //   basename: "/wu14-din-maegler-NataschaBGB/"
+    // }
   );
 
   return (
