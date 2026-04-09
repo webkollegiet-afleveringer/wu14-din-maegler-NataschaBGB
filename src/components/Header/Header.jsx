@@ -31,8 +31,8 @@ export default function Header() {
             
             <header className='header__main'>
                 <nav className='header__nav'>
-                    <a href="/wu14-din-maegler-NataschaBGB/" className="logo">
-                        <img src="/dinmaegler_logo.png" alt="dinmaegler_logo" />
+                    <a href="/" className="logo">
+                        <img src="../assets/dinmaegler_logo.png" alt="dinmaegler_logo" />
                         <h1>Din Mægler</h1>
                     </a>
                     <ul>
