@@ -12,7 +12,7 @@ export default function Footer() {
             <section className='footer__main'>
                 <div className='container'>
                     
-                    <a href="/" className="footer__main-logo">
+                    <a href="/wu14-din-maegler-NataschaBGB/" className="footer__main-logo">
                         <img src="./dinmaegler_logo.png" alt="dinmaegler_logo" />
                         <h1>Din Mægler</h1>
                     </a>
