@@ -1,8 +1,11 @@
+import { useBookmarks } from '../../hooks/useBookmarks';
 import HouseCard from '../HouseCard/HouseCard';
 import './HousesHomes.sass';
 
 
 export default function HousesHomes({ homes, selectedType, price }) {
+
+    const bookmarks = useBookmarks();
 
     // MARK: Filter Homes
     // homes.homes is the array of homes from the loader, we need to filter it based on selectedType and price
@@ -76,7 +79,7 @@ export default function HousesHomes({ homes, selectedType, price }) {
                 <section className='homes__homes'>
                     {/* map through filteredHomes and create a HouseCard for each home */}
                     {filteredHomes.map(home => (
-                        <HouseCard key={home.id} home={home} showFavorite={true} />
+                        <HouseCard key={home.id} home={home} showFavorite={true} bookmarks={bookmarks} />
                     ))}
                 </section>
             </div>

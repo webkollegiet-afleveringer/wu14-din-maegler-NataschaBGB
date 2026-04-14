@@ -1,26 +1,25 @@
 import { Link } from 'react-router';
 import './HouseCard.sass';
 import { IoMdHeart } from "react-icons/io";
-import { useBookmarks } from '../../hooks/useBookmarks';
 
 
-export default function HouseCard({ home, showFavorite }) {
+export default function HouseCard({ home, showFavorite, bookmarks }) {
 
     // get addBookmark and isBookmarked from useBookmarks hook
-    const { addBookmark, isBookmarked } = useBookmarks();
+    const { addBookmark, isBookmarked } = bookmarks;
 
 
     return (
         <section className='home'>
             
-            <button className={`home__bookmark-button ${isBookmarked(home.id) ? "home__bookmark-button--added" : "home__bookmark-button--not-added"}`} onClick={() => addBookmark(home.id, home.adress1, home.description)} disabled={isBookmarked(home.id)} style={{ display: showFavorite ? 'flex' : 'none' }}>
+            <button className={`home__bookmark-button ${isBookmarked(home.id) ? "home__bookmark-button--added" : "home__bookmark-button--not-added"}`} onClick={() => addBookmark(home.id, home.adress1, home.description)} disabled={isBookmarked(home.id)} style={{ display: showFavorite ? 'flex' : 'none' }}> 
                 <IoMdHeart className='heart' />
             </button>
 
             {home.images?.[0]?.formats?.thumbnail?.url ? (
                 <img src={home.images[0].formats.thumbnail.url} alt={home.title} />
             ) : (
-                <div className='home__no-image'>No image available</div>
+                <div className='home__no-image'>Intet billede</div>
             )}
             
             <div className='home__info'>

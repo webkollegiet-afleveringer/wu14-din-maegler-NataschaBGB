@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router"
 import { homePageLoader } from "./loaders/homePageLoader";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import { homesLoader } from "./loaders/homesLoader";
 import Houses from "./pages/Houses";
 import House from "./pages/House";
@@ -9,8 +10,8 @@ import { brokersLoader } from "./loaders/brokersLoader";
 import Brokers from "./pages/Brokers";
 import { brokerLoader } from "./loaders/brokerLoader";
 import Broker from "./pages/Broker";
+import Favourites from "./pages/Favourites";
 import Error from "./pages/Error";
-import Register from "./pages/Register";
 
 
 export default function App() {
@@ -76,6 +77,10 @@ export default function App() {
         element: <Broker />,
         loader: brokerLoader,
         hydrateFallbackElement: <p>Indlæser mægler...</p>,
+      },
+      {
+        path: '/favourites',
+        element: <Favourites />,
       },
       {
         path: '*',

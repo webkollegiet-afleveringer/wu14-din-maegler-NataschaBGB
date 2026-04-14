@@ -1,9 +1,12 @@
 import { Link } from 'react-router';
 import HouseCard from '../HouseCard/HouseCard';
 import './HighlightedHomes.sass';
+import { useBookmarks } from '../../hooks/useBookmarks';
 
 
 export default function HighlightedHomes({ homes }) {
+
+    const bookmarks = useBookmarks();
 
     return (
         <section className='highlighted-homes'>
@@ -17,7 +20,7 @@ export default function HighlightedHomes({ homes }) {
                     {/* loop through homes variable which gets its data from the parent component */}
                     {homes.map(home => (
                         // set home from HouseCard to home from the map function
-                        <HouseCard key={home.id} home={home} showFavorite={false} />
+                        <HouseCard key={home.id} home={home} showFavorite={false} bookmarks={bookmarks} />
                     ))}
                 </section>
 
