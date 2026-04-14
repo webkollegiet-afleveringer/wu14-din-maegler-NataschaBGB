@@ -7,9 +7,9 @@ export default function Subhero({ height, title, titleSize, subtitle }) {
         
         <section className='subhero' style={{ height }}>
                 
-            <h2 className='subhero__title' style={{ fontSize: titleSize }}>
+            <h1 className='subhero__title' style={{ fontSize: titleSize }}>
                 {title}
-            </h2>
+            </h1>
             {subtitle && <p className='subhero__subtitle'>Home | <span>{subtitle}</span></p>}
             
         </section>

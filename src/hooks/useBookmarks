@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
 export function useBookmarks() {
-    const [bookmarked, setBookmarked] = useState(() => {
+  
+  const [bookmarked, setBookmarked] = useState(() => {
     return JSON.parse(localStorage.getItem("saved_homes")) || [];
-});
+  });
 
   useEffect(() => {
     localStorage.setItem("saved_homes", JSON.stringify(bookmarked));
@@ -25,10 +26,10 @@ export function useBookmarks() {
     setBookmarked((prev) => [...prev, newHome]);
   };
 
-
   const removeBookmark = (id) => {
     setBookmarked((prev) => prev.filter((a) => a.id !== id));
   };
 
   return { bookmarked, addBookmark, removeBookmark, isBookmarked };
+  
 }
