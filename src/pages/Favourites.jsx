@@ -1,6 +1,7 @@
 import FavouritesDetails from "../components/FavouritesDetails/FavouritesDetails";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import SearchFavourites from "../components/SearchFavourites/SearchFavourites";
 import Subhero from "../components/Subhero/Subhero";
 
 
@@ -15,12 +16,8 @@ export default function Favourites() {
             
                 <Subhero height="200px" title="Mine favoritboliger" titleSize="3.8rem" subtitle={false} />
 
-                <section className="favourites-page__container">
+                <FavouritesDetails />                
 
-                    <FavouritesDetails />
-
-                </section>
-            
             </main>
             
             <Footer />

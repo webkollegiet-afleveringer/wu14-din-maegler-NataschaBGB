@@ -1,0 +1,25 @@
+@use '../../style/_variables' as var;
+    
+.search-favourites
+    margin: 0 0 2rem
+    padding: 0 0 1rem
+    border-bottom: 1px solid var.$border-color
+    
+    &__input
+        display: flex
+        align-items: center
+        gap: 1rem
+        padding: .5rem
+        background-color: #FFFFFF
+        border: 1px solid var.$border-color
+        width: 30%
+        border-radius: 4px
+        .icon
+            color: var.$secondary-text-color
+            font-size: 1.2rem
+        input
+            border: none
+            outline: none
+            width: 100%
+            :placeholder
+                color: var.$secondary-text-color
