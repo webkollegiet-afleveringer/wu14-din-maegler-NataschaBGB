@@ -12,14 +12,22 @@ export function useBookmarks() {
 
   const isBookmarked = (id) => bookmarked.some((a) => a.id === id);
 
-  const addBookmark = (id, adress1, description) => {
+  const addBookmark = (id, image, adress1, postalcode, city, type, cost, energylabel, rooms, livingspace, price) => {
     if (isBookmarked(id)) return;
 
     // change to match the home data structure
     const newHome = {
       id: id,
-      headline: adress1,
-      text: description,
+      image: image,
+      title: adress1,
+      postalcode: postalcode,
+      city: city,
+      type: type,
+      cost: cost,
+      energylabel: energylabel,
+      rooms: rooms,
+      livingspace: livingspace,
+      price: price,
       buttonPressed: true,
     };
 
@@ -31,5 +39,5 @@ export function useBookmarks() {
   };
 
   return { bookmarked, addBookmark, removeBookmark, isBookmarked };
-  
+
 }

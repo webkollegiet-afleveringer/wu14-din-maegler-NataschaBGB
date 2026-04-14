@@ -12,7 +12,7 @@ export default function HouseCard({ home, showFavorite, bookmarks }) {
     return (
         <section className='home'>
             
-            <button className={`home__bookmark-button ${isBookmarked(home.id) ? "home__bookmark-button--added" : "home__bookmark-button--not-added"}`} onClick={() => addBookmark(home.id, home.adress1, home.description)} disabled={isBookmarked(home.id)} style={{ display: showFavorite ? 'flex' : 'none' }}> 
+            <button className={`home__bookmark-button ${isBookmarked(home.id) ? "home__bookmark-button--added" : "home__bookmark-button--not-added"}`} onClick={() => addBookmark(home.id, home.images[0].formats.thumbnail.url, home.adress1, home.postalcode, home.city, home.type, home.cost, home.energylabel, home.rooms, home.livingspace, home.price)} disabled={isBookmarked(home.id)} style={{ display: showFavorite ? 'flex' : 'none' }}> 
                 <IoMdHeart className='heart' />
             </button>
 
@@ -44,7 +44,7 @@ export default function HouseCard({ home, showFavorite, bookmarks }) {
                 {/* price = full price */}
                 
                 {home.type && home.cost ? (
-                    <p className='home__type'><span>{home.type}</span> • Ejerudgift: {home.cost} kr.</p>
+                    <p className='home__type'><span>{home.type}</span> • Ejerudgift: {home.cost.toLocaleString('da-DK')} kr.</p>
                 ) : null}
 
                 <div className='home__details'>
