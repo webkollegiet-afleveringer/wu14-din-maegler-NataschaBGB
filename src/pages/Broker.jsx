@@ -5,11 +5,13 @@ import BrokerDetails from "../components/BrokerDetails/BrokerDetails";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import Subhero from "../components/Subhero/Subhero";
+import SearchProperty from "../components/SearchProperty/SearchProperty";
+import CallUs from "../components/CallUs/CallUs";
 
 export default function Broker() {
 
     const { broker } = useLoaderData();
-    console.log(broker);
+    // console.log(broker);
     
 
     return (
@@ -21,7 +23,16 @@ export default function Broker() {
             
                 <Subhero height="200px" title="Kontakt en medarbejder" titleSize="3.8rem" subtitle={false} />
 
-                <BrokerDetails broker={broker} />
+                <section className="broker-page__container">
+
+                    <BrokerDetails broker={broker} />
+
+                    <section className="broker-page__actions">
+                        <SearchProperty />
+                        <CallUs />        
+                    </section>
+
+                </section>
             
             </main>
             

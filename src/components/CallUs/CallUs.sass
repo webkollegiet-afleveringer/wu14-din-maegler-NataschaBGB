@@ -1,0 +1,32 @@
+@use '../../style/_variables' as var;
+    
+.call-us
+    background-color: var.$tertiary-bg-color
+    padding: 6rem 4rem
+    text-align: center
+    color: #FFFFFF
+    
+    &__title
+        font-size: 1.6rem
+        margin: 0 0 1.5rem
+        padding: 0 0 1.5rem
+        line-height: 40px
+        position: relative
+        span
+            display: block
+    &__title:before
+        content: ""
+        position: absolute
+        width: 60px
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        border-bottom: 4px solid var.$border-color
+    
+    &__subtitle
+        margin: 0 0 1rem
+    
+    &__button
+        text-decoration: none
+        font-size: 1.6rem
+        color: #FFFFFF
