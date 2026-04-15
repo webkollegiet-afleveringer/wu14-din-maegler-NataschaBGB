@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useBookmarks } from '../../hooks/useBookmarks';
 import FavouriteCard from '../FavouriteCard/FavouriteCard';
 import SearchFavourites from '../SearchFavourites/SearchFavourites';
@@ -8,22 +9,30 @@ export default function FavouritesDetails() {
 
     const { bookmarked, removeBookmark } = useBookmarks();
 
+    const [filteredHomes, setFilteredHomes] = useState(bookmarked);
+
     console.log(bookmarked);
+
+    useEffect(() => {
+        setFilteredHomes(bookmarked);
+    }, [bookmarked]);
 
     // filter the bookmarked homes based on the search term and return the filtered list of homes to be displayed in the UI
     const handleSearch = (searchTerm) => {
-        // if there is no search term, return all bookmarked homes
         if (!searchTerm) {
-            return bookmarked;
+            setFilteredHomes(bookmarked);
+            return;
         }
-        // filter the bookmarked homes based on the search term
-        return bookmarked.filter(home => {
-            // convert search term to lowercase and check if it is included in any of the home properties that are strings
-            const search = searchTerm.toLowerCase();
-            return Object.values(home).some(value =>
+
+        const search = searchTerm.toLowerCase();
+
+        const filtered = bookmarked.filter(home =>
+            Object.values(home).some(value =>
                 typeof value === 'string' && value.toLowerCase().includes(search)
-            );
-        });
+            )
+        );
+
+        setFilteredHomes(filtered);
     };
 
     
@@ -35,9 +44,9 @@ export default function FavouritesDetails() {
 
             {/* if there is a search term, show the filtered results */}
 
-            {bookmarked && bookmarked.length > 0 ? (
+            {filteredHomes && filteredHomes.length > 0 ? (
 
-                bookmarked.map((home) => (
+                filteredHomes.map((home) => (
                     
                     <FavouriteCard key={home.id} home={home} removeBookmark={removeBookmark} />
             
