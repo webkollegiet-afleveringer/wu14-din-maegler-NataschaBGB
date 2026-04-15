@@ -3,6 +3,7 @@ import { IoIosPaperPlane } from "react-icons/io";
 import { IoLocationSharp } from "react-icons/io5";
 import logo from "../../assets/dinmaegler_logo.png";
 import './Footer.sass';
+import { Link } from "react-router";
 
 
 export default function Footer() {
@@ -47,10 +48,18 @@ export default function Footer() {
                     <nav className='footer__quick-links'>
                         <h3>Quick Links</h3>
                         <ul>
-                            <li><a href="/">Boliger til salg</a></li>
-                            <li><a href="/brokers">Mæglere</a></li>
-                            <li><a href="/contact">Kontakt os</a></li>
-                            <li><a href="/login">Log ind / bliv bruger</a></li>
+                            <li>
+                                <Link to="/houses">Boliger til salg</Link>
+                            </li>
+                            <li>
+                                <Link to="/brokers">Mæglere</Link>
+                            </li>
+                            <li>
+                                <Link to="/contact">Kontakt os</Link>
+                            </li>
+                            <li>
+                                <Link to="/login">Log ind / bliv bruger</Link>
+                            </li>
                         </ul>
                     </nav>
 
