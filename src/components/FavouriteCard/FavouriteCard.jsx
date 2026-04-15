@@ -1,6 +1,25 @@
 import './FavouriteCard.sass';
 
 
+// when adding a home to favourites, it is meant to be added to this:
+
+// Add to this API endpoint: https://dinmaegler.onrender.com/users/6163ff832616683c883b049f - where the last part is the user id
+// set headers: 
+// Content-Type: application/json, 
+// Authorization: Bearer <token>
+//  - where the token is the JWT token received when logging in
+// set method to PUT 
+// set body:
+// JSON.stringify(
+//     { 
+//         homes: [homeId]
+//     }
+// )
+// - where homeId is the id of the home being added to favourites
+
+// But I can not create a user, because I am missing an endpoint for registration, so I will just use the useBookmarks hook to manage the favourites in local storage for now
+
+
 export default function FavouriteCard({ home, removeBookmark }) {
     
     return (

@@ -46,27 +46,30 @@ export default function LoginForm() {
         // if the length of the array is 0, it means there are no validation errors and the form is valid
         if (Object.keys(validationError).length === 0) {
             console.log('Form is valid, submitting data:', formData);
-            // Perform login or registration logic here
-            // Example: call an API endpoint to submit the form data
-            // fetch('https://dinmaegler.onrender.com/auth/local', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify({
-            //         identifier: formData.email,
-            //         password: formData.password
+            // try {
+            //     console.log('Form is valid, submitting data:', formData);
+            //     // Perform login or registration logic here
+            //     // Example: call an API endpoint to submit the form data
+            //     fetch('https://dinmaegler.onrender.com/auth/local', {
+            //             method: 'POST',
+            //             headers: {
+            //             'Content-Type': 'application/json'
+            //         },
+            //         body: JSON.stringify({
+            //             identifier: formData.email,
+            //             password: formData.password
+            //         })
             //     })
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log('Login successful:', data);
-            //     // Redirect to homepage or show success message
-            // })
-            // .catch(error => {
-            //     console.error('Login failed:', error);
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         console.log('Login successful:', data);
+            //         // Redirect to homepage or show success message
+            //     })
+            // }
+            // catch (error) {
+            //     console.error('An error occurred during form submission:', error);
             //     // Show error message to the user
-            // });
+            // }
 
         }
         // if the length of the array is greater than 0, it means there are validation errors and the form is not valid
