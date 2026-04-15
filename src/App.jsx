@@ -11,6 +11,7 @@ import Brokers from "./pages/Brokers";
 import { brokerLoader } from "./loaders/brokerLoader";
 import Broker from "./pages/Broker";
 import Favourites from "./pages/Favourites";
+import Contact from "./pages/Contact";
 import Error from "./pages/Error";
 
 
@@ -81,6 +82,10 @@ export default function App() {
       {
         path: '/favourites',
         element: <Favourites />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
       },
       {
         path: '*',
