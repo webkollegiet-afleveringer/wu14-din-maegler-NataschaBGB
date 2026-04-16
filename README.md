@@ -3,8 +3,8 @@
 - Class number: WU14
 
 # 🌐 URL's
-- GitHub repository:
-- GitHub Pages:
+- GitHub repository: https://github.com/webkollegiet-afleveringer/wu14-din-maegler-NataschaBGB
+- GitHub Pages: https://webkollegiet-afleveringer.github.io/wu14-din-maegler-NataschaBGB/
 
 # 🔐 Username and password
 - No API endpoint for creating a user was provided, so I was not able to do that part of the assignment.
@@ -25,20 +25,30 @@
 ## 📄 Disclosure of third-party code
 
 ### Login form:
-- Borrowed code from this youtube video: https://www.youtube.com/watch?v=VJ1OWCQJhLk
+- Youtube: https://www.youtube.com/watch?v=VJ1OWCQJhLk
+
+### Form validation + schemas:
+- Zod validation: https://mintlify.wiki/colinhacks/zod/guides/error-handling
 
 ---
 
 ## 🗣️ Arguments for my choices
 
+### Header:
+- The header should only display the favourites link if the user is logged in, but since I couldn't log in, I decided to always display the favourites link in the header.
+
 ### Brokers page:
 - Changed linkedin link in BrokerCard to phone link, because the API does not provide a link for a linkedin profile
+
+### API
+- I did not have access to all endpoints of the API. On pages where I needed to POST to the API but couldn't, I commented out the code for the POST request and just logged the data.
+- On the favourites page, where the added favourites should be POSTED to the API, I stored the favourites in local storage instead, so that the user can still see their added favourites on the page, even though they are not saved to the API.
 
 ---
 
 ## 📊 Evaluation of my work
-- I regret not being able to complete the assignment.
-- I know that I could have done more, if I had been able to manage my time better.
+- I regret not being able to complete the assignment, not only because of the missing endpoints, but also due to poor time management.
+- In spite of me not being able to manage my time effectively, I ended up with a better result than I expected. 
 - I am satisfied with the parts that I did complete.
 
 ### What went well:
@@ -49,8 +59,9 @@
 
 ### What could have been better:
 - Time management. I had trouble focusing on the assignment and managing my time effectively, which led to a not complete assignment.
-- Login form. I wanted to implement more validation, but spent too much time trying to think about what fields to add, so I ended up leaving it, to not waste more time.
+- Form validation. I wanted to implement more validation fields, but spent too much time trying to think about what fields to add, so I ended up leaving it, to not waste more time.
 
+---
 
 ## 📌 Highlighting special points for assessment
 
