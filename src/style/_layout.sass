@@ -60,3 +60,56 @@
         flex-direction: column
         gap: 2rem
         width: 100%
+
+
+.contact-page
+    &__container
+        max-width: 1200px
+        margin: 8rem auto
+    &__title
+        color: var.$secondary-title-color
+        font-size: 2rem
+        padding: 0 0 2rem
+        margin-bottom: 2.5rem
+        position: relative
+    &__title:before
+        content: ""
+        position: absolute
+        width: 12%
+        bottom: 0
+        left: 0
+        border-bottom: 4px solid var.$tertiary-title-color
+    &__text
+        color: var.$primary-text-color
+        font-size: 1rem
+        line-height: 1.75rem
+    &__content
+        display: grid
+        grid-template-columns: 1fr 440px
+        gap: 2rem
+        margin: 4rem 0 0
+    &__image
+        height: 450px
+        width: 100%
+        object-fit: cover
+
+
+.contact-info
+    padding: 0 2rem
+    border: 1px solid var.$border-color
+    &__phone, &__email, &__address
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: .75rem
+        border-bottom: 2px solid var.$border-color
+        padding: 2rem 0
+    &__address
+        border: none
+    &__title
+        color: var.$secondary-title-color
+        font-size: 1.2rem
+        font-weight: 600
+    &__value
+        color: var.$primary-text-color
+        font-size: 1rem
