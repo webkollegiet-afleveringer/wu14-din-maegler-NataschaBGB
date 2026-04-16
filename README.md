@@ -15,6 +15,7 @@
 - React
 - React Router
 - React Icons
+- Zod
 - JavaScript
 - HTML
 - CSS
