@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './LoginForm.sass';
 import { Link } from 'react-router';
+import { loginSchema } from '../../validation/authSchema';
 
 
 export default function LoginForm() {
@@ -14,10 +15,6 @@ export default function LoginForm() {
     //     "identifier": "carsten@mail.dk",
     //     "password" : "654321"
     // }'
-
-
-    // REGISTER
-    // Full name, email, password, confirm password
 
 
     // formData state to hold the values of the form fields
@@ -36,74 +33,75 @@ export default function LoginForm() {
         // prevent the default form submission behavior
         // the default behavior would cause the page to reload, which we don't want in a React application
         event.preventDefault();
-        // console.log(formData);
-        // set validationError to the result of validateForm function, with formData as the argument
-        const validationError = validateForm(formData);
-        // set the errors state to the validationError object returned by the validateForm function - this will trigger a re-render of the component and display the error messages next to the form fields
-        setErrors(validationError);
 
-        // Object.keys(validationError) = an array of the keys in the validationError object (e.g. ['email', 'password'])
-        // if the length of the array is 0, it means there are no validation errors and the form is valid
-        if (Object.keys(validationError).length === 0) {
-            console.log('Form is valid, submitting data:', formData);
-            // try {
-            //     console.log('Form is valid, submitting data:', formData);
-            //     // Perform login or registration logic here
-            //     // Example: call an API endpoint to submit the form data
-            //     fetch('https://dinmaegler.onrender.com/auth/local', {
-            //             method: 'POST',
-            //             headers: {
-            //             'Content-Type': 'application/json'
-            //         },
-            //         body: JSON.stringify({
-            //             identifier: formData.email,
-            //             password: formData.password
-            //         })
+        // loginSchema.safeParse(formData) will return an object with a success property that is true if the validation passed and false if it failed, and an error property that contains the validation errors if it failed
+        const result = loginSchema.safeParse(formData);
+
+        // if the success property is true, it means the form data is valid and we can proceed with submitting the form or showing a success message
+        if (result.success) {
+            // clear any previous errors, because the form is now valid
+            setErrors({});
+            // log the valid form data to the console 
+            // (in a real application, you would submit the form data to an API or perform some other action here)
+            console.log('Form is valid:', result.data);
+
+            // Logging in a user should be posted to API, but I can't create a user and do not know the passwords for the existing users, so I will just log the valid form data to the console for now
+
+            // // Perform login or registration logic here
+            // // Example: call an API endpoint to submit the form data
+            // fetch('https://dinmaegler.onrender.com/auth/local', {
+            //         method: 'POST',
+            //         headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({
+            //         identifier: formData.email,
+            //         password: formData.password
             //     })
-            //     .then(response => response.json())
-            //     .then(data => {
-            //         console.log('Login successful:', data);
-            //         // Redirect to homepage or show success message
-            //     })
-            // }
-            // catch (error) {
-            //     console.error('An error occurred during form submission:', error);
-            //     // Show error message to the user
-            // }
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log('Login successful:', data);
+            //     // Redirect to homepage or show success message
+            // })
 
-        }
-        // if the length of the array is greater than 0, it means there are validation errors and the form is not valid
-        else {
-            console.log('Form has validation errors:', validationError);
-        }
-    };
+            // clear the form fields by resetting the formData state to its initial values (empty strings)
+            setFormData({
+                email: '',
+                password: ''
+            });
 
-    // validateForm function to validate the form data
-    // data parameter is the formData object containing the values of the form fields
-    const validateForm = (data) => {
-        // errors object to hold the validation error messages for each form field
+            // "return" to exit the handleSubmit function early, so that the code below that sets the errors state does not run when the form is valid
+            return;
+        }
+
+        // if the success property is false, it means the form data is invalid
+        // errors variable to hold the validation error messages for each form field, which we will extract from the result.error.issues array
         const errors = {};
 
-        // if the email field is empty or only contains whitespace, add an error message to the errors object with the key 'email'
-        if (!data.email.trim()) {
-            errors.email = 'Email er påkrævet';
+        // loop through the result.error.issues array, which contains an object for each validation error
+        for (const err of result.error.issues) {
+            // field variable to hold the name of the invalid field, which is the first element of the "path" array in the error object (e.g. "email" or "password")
+            const field = err.path[0];
+
+            // if there is not already an error message for this field in the errors object, add the error message from the validation error object to the errors object with the field name as the key (e.g. errors.email = "Email is required")
+            if (!errors[field]) {
+                // add the error message from the validation error object to the errors object with the field name as the key (e.g. errors.email = "Email is required")
+                errors[field] = err.message;
+            }
         }
-        // else if the email field does not match a basic email format regex pattern, add an error message to the errors object with the key 'email'
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-            errors.email = 'Ugyldig email format';
-        }
-        // if the password field is empty or only contains whitespace, add an error message to the errors object with the key 'password'
-        if (!data.password.trim()) {
-            errors.password = 'Password er påkrævet';
-        }
-        // return the errors object, which will be used to update the errors state in the handleSubmit function
-        return errors;
+        
+        // set the errors state to the errors object we just created, which will trigger a re-render of the component and display the error messages next to the form fields
+        setErrors(errors);
+
     };
 
     // handleChange function to update the formData state when the user types in the form fields
     // event parameter is the change event triggered by the input fields
     const handleChange = (event) => {
+        // destructure the "name" and "value" properties from the event.target, which is the input field that triggered the change event
         const { name, value } = event.target;
+        // update the formData state by spreading the previous formData and updating the specific field that changed (using the "name" property as the key and the "value" property as the new value for that field)
         setFormData({...formData, [name]: value });
     };
 
@@ -118,13 +116,29 @@ export default function LoginForm() {
 
                 <label>
                     <span className='login-form__label'>Email</span>
-                    <input type="email" id="email" name="email" placeholder='Email' onChange={handleChange} value={formData.email} autoComplete="new-text" />
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder='Email' 
+                        onChange={handleChange} 
+                        value={formData.email} 
+                        autoComplete="new-text" 
+                    />
                     {errors.email && <p className='login-form__error'>{errors.email}</p>}
                 </label>
                 
                 <label>
                     <span className='login-form__label'>Password</span>
-                    <input type="password" id="password" name="password" placeholder='Password' onChange={handleChange} value={formData.password} autoComplete="new-password" />
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder='Password' 
+                        onChange={handleChange} 
+                        value={formData.password} 
+                        autoComplete="new-password" 
+                    />
                     {errors.password && <p className='login-form__error'>{errors.password}</p>}
                 </label>
                 
