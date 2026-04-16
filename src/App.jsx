@@ -13,6 +13,7 @@ import Broker from "./pages/Broker";
 import Favourites from "./pages/Favourites";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
+import { houseLoader } from "./loaders/houseLoader";
 
 
 export default function App() {
@@ -22,34 +23,12 @@ export default function App() {
       {
         path: '/',
         element: <Home />,
-        // ----- 
-        // load 4 homes in "Udvalgte Boliger" section 
-        // load 3 brokers in "Mød vores engagerede medarbejdere" section 
-        // on the homepage. 
-        // -----
         loader: homePageLoader,
         hydrateFallbackElement: <p>Indlæser Hjem...</p>,
       },
       {
         path: '/login',
-        element: <Login />,
-        // -----
-        // login form with email and password fields, and a submit button. 
-        // on submit, validate the input and show error messages if necessary.
-        // fetch('https://dinmaegler.onrender.com/auth/local', {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/json'
-        //   },
-        //   body: JSON.stringify({
-        //     identifier: "email",
-        //     password: "password"
-        //   })
-        // })
-        // if login is successful, redirect to the homepage. 
-        // -----
-        // loader: homesLoader,
-        // hydrateFallbackElement: <p>Indlæser alle hjem...</p>,
+        element: <Login />
       },
       {
         path: '/register',
@@ -64,8 +43,8 @@ export default function App() {
       {
         path: '/houses/:houseId',
         element: <House />,
-        // loader: houseLoader,
-        // hydrateFallbackElement: <p>Indlæser hjem...</p>,
+        loader: houseLoader,
+        hydrateFallbackElement: <p>Indlæser hjem...</p>,
       },
       {
         path: '/brokers',
