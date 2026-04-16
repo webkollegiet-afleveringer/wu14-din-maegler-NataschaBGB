@@ -39,7 +39,7 @@ export default function HousesHomes({ homes, selectedType, price }) {
     }
 
     // MARK: Search Filter
-    // get search query from url parameters
+    // get search query from URL parameters using URLSearchParams API, which provides a convenient way to parse query parameters from the URL, and store it in a variable called "searchQuery"
     const searchParams = new URLSearchParams(window.location.search);
     const searchQuery = searchParams.get('search');
 
