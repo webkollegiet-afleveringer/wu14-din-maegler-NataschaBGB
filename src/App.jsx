@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { homesLoader } from "./loaders/homesLoader";
 import Houses from "./pages/Houses";
+import { homeLoader } from "./loaders/homeLoader";
 import House from "./pages/House";
 import { brokersLoader } from "./loaders/brokersLoader";
 import Brokers from "./pages/Brokers";
@@ -13,7 +14,6 @@ import Broker from "./pages/Broker";
 import Favourites from "./pages/Favourites";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
-import { houseLoader } from "./loaders/houseLoader";
 
 
 export default function App() {
@@ -41,9 +41,9 @@ export default function App() {
         hydrateFallbackElement: <p>Indlæser alle hjem...</p>
       },
       {
-        path: '/houses/:houseId',
+        path: '/houses/:homeId',
         element: <House />,
-        loader: houseLoader,
+        loader: homeLoader,
         hydrateFallbackElement: <p>Indlæser hjem...</p>,
       },
       {
