@@ -1,0 +1,60 @@
+@use "../../style/variables.sass" as var;
+
+.overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.8)
+    display: flex
+    justify-content: center
+    z-index: 9999
+
+    &__gallery, &__floorplans
+        position: relative
+        width: 80%
+        height: 80%
+        margin: 2rem auto
+
+    &__gallery-image, &__floorplans-image
+        width: 100%
+        height: 100%
+        object-fit: contain
+
+    &__images-slider
+        display: flex
+        flex-wrap: nowrap
+        overflow-x: auto
+        height: fit-content
+        width: 100%
+        &::-webkit-scrollbar
+            display: none
+        img
+            flex: 0 0 auto
+            margin-right: 2rem
+            width: 100%
+            height: 100%
+            object-fit: contain
+            &:last-of-type
+                margin-right: 0
+
+    &__close
+        position: absolute
+        top: 20px
+        right: 20px
+        background-color: var.$secondary-icon-bg-color
+        color: var.$secondary-icon-color
+        border: 2px solid #FFFFFF
+        font-size: 1.5rem
+        padding: .5rem 1rem
+        cursor: pointer
+
+    &__nav
+        position: absolute
+        bottom: 20px
+        display: flex
+        gap: 1rem
+        .icon
+            color: #FFFFFF
+            font-size: 3rem

@@ -37,12 +37,6 @@ export default function HouseCard({ home, showFavorite, bookmarks }) {
                     <p className='home__city'>{home.postalcode} {home.city}</p>
                 ) : null}
                 
-                {/* cost = ejerudgifter */}
-                {/* gross = brutto */}
-                {/* netto = netto */}
-                {/* payment = udbetaling */}
-                {/* price = full price */}
-                
                 {home.type && home.cost ? (
                     <p className='home__type'><span>{home.type}</span> • Ejerudgift: {home.cost.toLocaleString('da-DK')} kr.</p>
                 ) : null}
