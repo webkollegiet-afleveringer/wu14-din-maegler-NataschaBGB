@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import HouseDetails from "../components/HouseDetails/HouseDetails";
 
 
 export default function House() {
@@ -16,7 +17,7 @@ export default function House() {
             
             <main>
                 
-                <h1>House Details</h1>
+                <HouseDetails home={home} />
 
             </main>
 
