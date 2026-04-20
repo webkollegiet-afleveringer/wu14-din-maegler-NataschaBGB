@@ -1,0 +1,25 @@
+@use '../../style/_variables' as var;
+    
+.broker-details
+    padding: 2rem
+    border: 1px solid var.$border-color
+
+    &__description
+        padding: 1.5rem 0 0
+        h2
+            color: var.$secondary-title-color
+            font-size: 1.2rem
+            margin: 0 0 1rem
+            padding: 0 0 1rem
+            position: relative
+        h2:before
+            content: ""
+            position: absolute
+            width: 60px
+            bottom: 0
+            left: 0
+            border-bottom: 4px solid var.$tertiary-title-color
+        p
+            color: var.$primary-text-color
+            font-size: 1.1rem
+            line-height: 30px    

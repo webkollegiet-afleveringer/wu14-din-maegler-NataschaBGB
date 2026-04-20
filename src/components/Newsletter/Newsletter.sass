@@ -1,0 +1,58 @@
+@use "../../style/variables.sass" as var;
+    
+.newsletter
+    background-image: linear-gradient(
+        rgba(37, 47, 58, 0.8), 
+        rgba(37, 47, 58, 0.8)
+        ), url("../../assets/newsletter.png")
+    background-size: cover
+    background-position: center
+    padding: 6rem 0
+
+    .container
+        max-width: 1124px
+        margin: 0 auto
+        display: grid
+        grid-template-columns: 1fr 1fr
+        align-items: center
+        gap: 2rem
+
+    h2
+        font-size: 1.9rem
+        line-height: 3rem
+        color: #FFFFFF
+
+    &__form
+        width: 100%
+        position: relative
+
+        input
+            width: 100%
+            padding: 1.75rem 1rem
+            border-radius: 4px
+            font-size: 1.2rem
+            border: none
+            &::placeholder
+                color: var.$secondary-text-color
+        button
+            position: absolute
+            right: 0
+            height: 100%
+            padding: 1.5rem 2rem
+            background-color: #FFFFFF
+            color: #000000
+            border: none
+            border-radius: 4px
+            font-size: 1.75rem
+            cursor: pointer
+
+    &__error
+        position: absolute
+        bottom: -2.75rem
+        left: 0
+        width: 100%
+        color: red
+        background-color: var.$primary-icon-bg-color
+        padding: 1rem
+        border-bottom-left-radius: 4px
+        border-bottom-right-radius: 4px

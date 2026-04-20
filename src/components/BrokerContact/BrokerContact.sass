@@ -1,0 +1,61 @@
+@use '../../style/_variables' as var;
+    
+.contact-broker
+    margin: 2rem 0 0
+    border: 1px solid var.$border-color
+    padding: 2rem
+    
+    &__title
+        color: var.$secondary-title-color
+        font-size: 1.3rem
+        margin: 0 0 2rem
+        padding: 0 0 1rem
+        position: relative
+    &__title:before
+        content: ""
+        position: absolute
+        width: 60px
+        bottom: 0
+        left: 0
+        border-bottom: 4px solid var.$tertiary-title-color
+    
+    &__form
+        display: flex
+        flex-direction: column
+        gap: 1.5rem
+    
+    &__form-error
+        color: red
+        background-color: var.$primary-icon-bg-color
+        padding: 1rem
+        border-radius: 4px
+    
+    &__form-name-email
+        display: flex
+        gap: 1.5rem
+        label
+            width: 100%
+    
+    &__form-label
+        display: block
+        margin: 0 0 .5rem
+        color: var.$primary-text-color
+        font-size: 1rem
+    
+    input, textarea
+        width: 100%
+        font-size: 1rem
+        padding: 1rem .75rem
+        border: 1px solid var.$border-color
+        &::placeholder
+            color: var.$secondary-text-color
+    
+    &__form-button
+        font-size: 1.2rem
+        padding: 1rem 2rem
+        background-color: var.$tertiary-bg-color
+        color: var.$secondary-icon-color
+        border: none
+        cursor: pointer
+        width: fit-content
+        margin: 0 auto

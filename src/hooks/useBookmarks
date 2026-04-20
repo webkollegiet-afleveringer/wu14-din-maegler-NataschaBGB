@@ -1,0 +1,43 @@
+import { useState, useEffect } from "react";
+
+export function useBookmarks() {
+  
+  const [bookmarked, setBookmarked] = useState(() => {
+    return JSON.parse(localStorage.getItem("saved_homes")) || [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("saved_homes", JSON.stringify(bookmarked));
+  }, [bookmarked]);
+
+  const isBookmarked = (id) => bookmarked.some((a) => a.id === id);
+
+  const addBookmark = (id, image, adress1, postalcode, city, type, cost, energylabel, rooms, livingspace, price) => {
+    if (isBookmarked(id)) return;
+
+    // change to match the home data structure
+    const newHome = {
+      id: id,
+      image: image,
+      title: adress1,
+      postalcode: postalcode,
+      city: city,
+      type: type,
+      cost: cost,
+      energylabel: energylabel,
+      rooms: rooms,
+      livingspace: livingspace,
+      price: price,
+      buttonPressed: true,
+    };
+
+    setBookmarked((prev) => [...prev, newHome]);
+  };
+
+  const removeBookmark = (id) => {
+    setBookmarked((prev) => prev.filter((a) => a.id !== id));
+  };
+
+  return { bookmarked, addBookmark, removeBookmark, isBookmarked };
+
+}

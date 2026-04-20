@@ -1,0 +1,51 @@
+@use '../../style/_variables' as var;
+    
+.contact-form
+    display: flex
+    flex-direction: column
+    gap: 1.5rem
+    padding: 2rem
+    border: 1px solid var.$border-color
+
+    &__label
+        display: block
+        margin: 0 0 .5rem
+        color: var.$primary-text-color
+        font-size: 1rem
+    
+    &__error
+        color: red
+        background-color: var.$primary-icon-bg-color
+        padding: 1rem
+        border-radius: 4px
+    
+    &__name-email
+        display: flex
+        gap: 1.5rem
+        label
+            width: 100%
+    
+    input, textarea
+        width: 100%
+        font-size: 1rem
+        padding: 1rem .75rem
+        border: 1px solid var.$border-color
+        &::placeholder
+            color: var.$secondary-text-color
+    
+    &__newsletter
+        display: flex
+        align-items: center
+        gap: .5rem
+        input
+            width: auto    
+
+    &__button
+        font-size: 1.2rem
+        padding: 1rem 2rem
+        background-color: var.$tertiary-bg-color
+        color: var.$secondary-icon-color
+        border: none
+        cursor: pointer
+        width: fit-content
+        margin: 0 auto

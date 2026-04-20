@@ -1,0 +1,115 @@
+@use '../style/_variables' as var;
+    
+
+// MARK: Global Style
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Roboto', sans-serif
+
+
+// MARK: Error Page
+.error-page
+
+    main
+        background-color: #eef7ff
+        padding: 8rem 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 2rem
+
+        h1
+            background: linear-gradient(180deg,rgb(238, 247, 255) 0%, rgb(238, 247, 255) 55%, rgb(22, 42, 65) 55%, rgb(22, 42, 65) 100%)
+            color: #FFFFFF
+            text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000
+            font-size: 12.5rem
+            padding: 0 1rem
+
+        h2
+            color: var.$secondary-title-color
+            font-size: 2rem
+
+        p
+            color: var.$primary-text-color
+            font-size: 1.1rem
+            width: 25%
+            text-align: center
+
+        a
+            margin: 1.5rem 0 0
+            text-decoration: none
+            font-size: 1.1rem
+            padding: 1rem 2rem
+            background-color: var.$tertiary-bg-color
+            color: var.$secondary-icon-color
+            border: none
+            cursor: pointer
+
+
+.broker-page
+    &__container
+        max-width: 1124px
+        margin: 8rem auto
+        display: grid
+        grid-template-columns: 1fr 350px
+        gap: 2rem
+    &__actions
+        display: flex
+        flex-direction: column
+        gap: 2rem
+        width: 100%
+
+
+.contact-page
+    &__container
+        max-width: 1124px
+        margin: 8rem auto
+    &__title
+        color: var.$secondary-title-color
+        font-size: 2rem
+        padding: 0 0 2rem
+        margin-bottom: 2.5rem
+        position: relative
+    &__title:before
+        content: ""
+        position: absolute
+        width: 12%
+        bottom: 0
+        left: 0
+        border-bottom: 4px solid var.$tertiary-title-color
+    &__text
+        color: var.$primary-text-color
+        font-size: 1rem
+        line-height: 1.75rem
+    &__content
+        display: grid
+        grid-template-columns: 1fr 440px
+        gap: 2rem
+        margin: 4rem 0 0
+    &__image
+        height: 450px
+        width: 100%
+        object-fit: cover
+
+
+.contact-info
+    padding: 0 2rem
+    border: 1px solid var.$border-color
+    &__phone, &__email, &__address
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: .75rem
+        border-bottom: 2px solid var.$border-color
+        padding: 2rem 0
+    &__address
+        border: none
+    &__title
+        color: var.$secondary-title-color
+        font-size: 1.2rem
+        font-weight: 600
+    &__value
+        color: var.$primary-text-color
+        font-size: 1rem

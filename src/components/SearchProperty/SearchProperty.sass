@@ -1,0 +1,29 @@
+@use '../../style/_variables' as var;
+    
+.search
+    background-color: #EEF7FF
+    padding: 2rem
+    
+    &__title
+        color: var.$secondary-title-color
+        font-size: 1.3rem
+        padding: 0 0 1.3rem
+        border-bottom: 1px solid var.$border-color
+        margin: 0 0 1.5rem
+    
+    &__input
+        display: flex
+        align-items: center
+        gap: 1rem
+        padding: .5rem
+        background-color: #FFFFFF
+        border: 1px solid var.$border-color
+        .icon
+            color: var.$secondary-text-color
+            font-size: 1.2rem
+        input
+            border: none
+            outline: none
+            width: 100%
+            :placeholder
+                color: var.$secondary-text-color
