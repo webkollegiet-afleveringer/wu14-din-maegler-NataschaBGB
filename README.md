@@ -34,6 +34,10 @@
 
 ## 🗣️ Arguments for my choices
 
+### General:
+I focused on the styling of all pages and making the different functions work - the search functions, filtering and signing up for the newsletter - but I was not able to complete the assignment due to missing API endpoints.
+I made some adjustments to the assignment in order to be able to complete as much as possible.
+
 ### Header:
 - The header should only display the favourites link if the user is logged in, but since I couldn't log in, I decided to always display the favourites link in the header.
 
